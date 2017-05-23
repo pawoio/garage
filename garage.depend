@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1494869516 source:/home/ja/Dokumenty/garage/main.cpp
+	<iostream>
+
+1495273048 source:/home/ja/Dokumenty/garage/vehicle.cpp
+	"vehicle.h"
+
+1495382432 /home/ja/Dokumenty/garage/vehicle.h
+	<string>
+	<iostream>
+
+1495274541 source:/home/ja/Dokumenty/garage/vehicleTests.cpp
+	<boost/test/unit_test.hpp>
+	<boost/mpl/list.hpp>
+	"vehicle.h"
+
+1495280637 source:/home/ja/Dokumenty/garage/Car.cpp
+	"Car.h"
+
+1495366657 /home/ja/Dokumenty/garage/Car.h
+	"vehicle.h"
+
+1495366514 source:/home/ja/Dokumenty/garage/motorcycle.cpp
+	"motorcycle.h"
+
+1495287886 /home/ja/Dokumenty/garage/motorcycle.h
+	"vehicle.h"
+

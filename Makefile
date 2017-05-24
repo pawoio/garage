@@ -11,7 +11,13 @@ lib_SOURCES = \
 	Car.cpp \
 	Car.h \
 	Garage.cpp \
-	Garage.h
+	Garage.h \
+	Observer.cpp \
+	Observer.h \
+	NrObs.cpp \
+	NrObs \
+	WriteObs.cpp \
+	WriteObs.h
 
 lib_OBJECTS=$(lib_SOURCES:.cpp=.o)
 

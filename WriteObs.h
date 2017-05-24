@@ -1,14 +1,14 @@
 #ifndef WRITEOBS_H
 #define WRITEOBS_H
 
-#include <Observer.h>
+#include "Observer.h"
 
 
 class WriteObs : public Observer
 {
     public:
         WriteObs();
-        void virtual notify();
+        bool virtual notify(unique_ptr<Vehicle> vhl);
         virtual ~WriteObs();
     protected:
     private:

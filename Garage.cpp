@@ -3,6 +3,10 @@
 Garage::Garage(vector<unique_ptr<Vehicle>>  vhlBase)
 {
     vehicleBase=std::move(vhlBase);
+    WriteObs writeObs;
+    NrObs nrObs;
+    observerCollection.push_back(writeObs);
+    observerCollection.push_back(nrObs);
 }
 
 Garage::~Garage()
@@ -12,40 +16,45 @@ Garage::~Garage()
 
 void Garage::addVehicle(unique_ptr<Vehicle> vhl)
 {
-    vehicleBase.push_back(vhl);
+    vehicleBase.push_back(move(vhl));
 }
 
-bool Garage::removeVehicle(unique_ptr<Vehicle> vhl)
+bool Garage::removeVehicle(size_t i)
 {
 
-    if(std::find(vehicleBase.begin(),vehicleBase.end(),vhl)==vehicleBase.end())
+    if(vehicleBase.size()<i)
         return false;
-    else vector<unique_ptr<Vehicle>>::erase(std::find(vehicleBase.begin(),vehicleBase.end(),vhl));
+    else vehicleBase.erase(vehicleBase.begin()+i);
         return true;
 
 }
 
-bool Garage::lendVehicle(unique_ptr<Vehicle> vhl)
+bool Garage::lendVehicle(int i)
 {
-        if(vhl->isAvailable()==true)
-        {
-            vhl->setAvailable(false);
-            return true;
-        }else
-            return false;
+    if(vehicleBase.begin()[i]->isAvailable()==true)
+    {
+        vehicleBase.begin()[i]->setAvailable(false);
+        return true;
+    }else
+        return false;
 
 }
 
-bool Garage::returnVehicle(unique_ptr<Vehicle> vhl)
+bool Garage::returnVehicle(int i)
 {
-    if(vhl->isAvailable()==false)
+
+    if(vehicleBase.begin()[i]->isAvailable()==false)
         {
-            vhl->setAvailable(true);
+            vehicleBase.begin()[i]->setAvailable(true);
             return true;
         }else
             return false;
 }
 
+bool writeObjects(std::string filename)
+{
+
+}
 
 
 

@@ -1,19 +1,20 @@
 #ifndef NROBS_H
 #define NROBS_H
 
-#include <Observer.h>
+#include "Observer.h"
+#include <stddef.h>
 
 
 class NrObs : public Observer
 {
     public:
         NrObs();
-        bool virtual notify();
+        bool virtual notify(unique_ptr<Vehicle> vhl);
         virtual ~NrObs();
     protected:
     private:
     size_t lentNr;
-    enum{N=100}
+    enum{N=100};
 
 };
 

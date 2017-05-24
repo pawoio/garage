@@ -17,11 +17,14 @@ class Garage
         explicit Garage(vector<unique_ptr<Vehicle>>);
         virtual ~Garage();
         void addVehicle(unique_ptr<Vehicle>);
-        bool removeVehicle(unique_ptr<Vehicle>);
-        bool lendVehicle(unique_ptr<Vehicle>);
-        bool returnVehicle(unique_ptr<Vehicle>);
+        bool removeVehicle(size_t i);
+        bool lendVehicle(int i);
+        bool returnVehicle(int i);
+        bool writeObjects(std::string);
+        bool readObjects(std::string);
     protected:
     private:
+        vector<Observer> observerCollection;
         vector<unique_ptr<Vehicle>> vehicleBase;
 
 

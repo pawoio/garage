@@ -10,7 +10,7 @@ NrObs::~NrObs()
     //dtor
 }
 
-bool NrObs::notify()
+bool NrObs::notify(unique_ptr<Vehicle> vhl)
 {
     if(lentNr<100)
     {

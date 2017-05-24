@@ -42,12 +42,13 @@
 		<Unit filename="Observer.h" />
 		<Unit filename="WriteObs.cpp" />
 		<Unit filename="WriteObs.h" />
+		<Unit filename="interface.cpp" />
+		<Unit filename="interface.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="motorcycle.cpp" />
 		<Unit filename="motorcycle.h" />
 		<Unit filename="vehicle.cpp" />
 		<Unit filename="vehicle.h" />
-		<Unit filename="vehicleTests.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

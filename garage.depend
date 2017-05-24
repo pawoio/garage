@@ -26,3 +26,61 @@
 1495287886 /home/ja/Dokumenty/garage/motorcycle.h
 	"vehicle.h"
 
+1495280637 source:/home/ja/Dokumenty/garage/garage/Car.cpp
+	"Car.h"
+
+1495366657 /home/ja/Dokumenty/garage/garage/Car.h
+	"vehicle.h"
+
+1495382432 /home/ja/Dokumenty/garage/garage/vehicle.h
+	<string>
+	<iostream>
+
+1494869516 source:/home/ja/Dokumenty/garage/garage/main.cpp
+	<iostream>
+
+1495366514 source:/home/ja/Dokumenty/garage/garage/motorcycle.cpp
+	"motorcycle.h"
+
+1495287886 /home/ja/Dokumenty/garage/garage/motorcycle.h
+	"vehicle.h"
+
+1495274541 source:/home/ja/Dokumenty/garage/garage/vehicleTests.cpp
+	<boost/test/unit_test.hpp>
+	<boost/mpl/list.hpp>
+	"vehicle.h"
+
+1495566244 source:/home/ja/Dokumenty/garage/garage/Garage.cpp
+	"Garage.h"
+
+1495647699 /home/ja/Dokumenty/garage/garage/Garage.h
+	"vehicle.h"
+	"motorcycle.h"
+	"Car.h"
+	<vector>
+	<memory>
+
+1495571313 source:/home/ja/Dokumenty/garage/garage/NrObs.cpp
+	"NrObs.h"
+
+1495571313 /home/ja/Dokumenty/garage/garage/NrObs.h
+	"Observer.h"
+	<stddef.h>
+
+1495572650 /home/ja/Dokumenty/garage/garage/Observer.h
+	"Garage.h"
+
+1495389304 source:/home/ja/Dokumenty/garage/garage/Observer.cpp
+	"Observer.h"
+
+1495389050 source:/home/ja/Dokumenty/garage/garage/vehicle.cpp
+	"vehicle.h"
+
+1495573141 source:/home/ja/Dokumenty/garage/garage/WriteObs.cpp
+	"WriteObs.h"
+	<time.h>
+	<fstream>
+
+1495571313 /home/ja/Dokumenty/garage/garage/WriteObs.h
+	"Observer.h"
+

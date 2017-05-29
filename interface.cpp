@@ -46,13 +46,13 @@ char Interface::menu()
              <<"a.Add vehicle          b.Delete vehicle\n"
              <<"c.Borrow vehicle       d.Return vehicle\n"
              <<"e.Write down vehicles  f.Read vehicles from file\n"
-             <<"g.Exit\n";
+             <<"q.Quit\n";
 
     while(std::cin>>ch)
     {
-        if(ch!=a&&ch!=b&&ch!=c&&ch!=d&&ch!=e&&ch!=f)
+        if(ch!=a&&ch!=b&&ch!=c&&ch!=d&&ch!=e&&ch!=f&&ch!=q)
         {
-            std::cout<<"Put a,b,c,d,e,f or g\n"
+            std::cout<<"Put a,b,c,d,e,f or q\n"
             while(std::cin.get()!='\n')
                 continue;
         }else
@@ -70,5 +70,6 @@ void Interface::addVehicle()
 {
     std::cout<<"Choose vehicle type:\n"
              <<"a.Motorcycle      b.Car\n"
-             <<"c.Truck"
+             <<"c.Truck\n";
+
 }

@@ -4,6 +4,8 @@
 #include "vehicle.h"
 #include "motorcycle.h"
 #include "Car.h"
+#include "NrObs.h"
+#include "WriteObs.h"
 
 #include <vector>
 #include <memory>

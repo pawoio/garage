@@ -53,10 +53,12 @@
 1495566244 source:/home/ja/Dokumenty/garage/garage/Garage.cpp
 	"Garage.h"
 
-1495647699 /home/ja/Dokumenty/garage/garage/Garage.h
+1495887906 /home/ja/Dokumenty/garage/garage/Garage.h
 	"vehicle.h"
 	"motorcycle.h"
 	"Car.h"
+	"NrObs.h"
+	"WriteObs.h"
 	<vector>
 	<memory>
 

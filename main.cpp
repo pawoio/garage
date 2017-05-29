@@ -4,6 +4,8 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    Garage garage;
+    Interface interface(garage);
+    interface.start();
     return 0;
 }

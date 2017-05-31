@@ -38,8 +38,9 @@
 		<Unit filename="Garage.h" />
 		<Unit filename="NrObs.cpp" />
 		<Unit filename="NrObs.h" />
-		<Unit filename="Observer.cpp" />
 		<Unit filename="Observer.h" />
+		<Unit filename="Truck.cpp" />
+		<Unit filename="Truck.h" />
 		<Unit filename="WriteObs.cpp" />
 		<Unit filename="WriteObs.h" />
 		<Unit filename="interface.cpp" />

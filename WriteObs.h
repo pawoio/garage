@@ -2,13 +2,13 @@
 #define WRITEOBS_H
 
 #include "Observer.h"
+#include <memory>
 
-
-class WriteObs : public Observer
+class WriteObs: public Observer
 {
     public:
         WriteObs();
-        bool virtual notify(unique_ptr<Vehicle> vhl);
+        bool virtual notify(std::unique_ptr<Vehicle> vhl);
         virtual ~WriteObs();
     protected:
     private:

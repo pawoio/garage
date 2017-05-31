@@ -9,7 +9,7 @@ class NrObs : public Observer
 {
     public:
         NrObs();
-        bool virtual notify(unique_ptr<Vehicle> vhl);
+        bool  notify(unique_ptr<Vehicle> vhl);
         virtual ~NrObs();
     protected:
     private:

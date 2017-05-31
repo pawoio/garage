@@ -9,3 +9,8 @@ Motorcycle::~Motorcycle()
 {
     //dtor
 }
+
+size_t Motorcycle::viewAdditionalInfo()
+{
+return 0;
+}

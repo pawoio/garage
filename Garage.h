@@ -4,11 +4,15 @@
 #include "vehicle.h"
 #include "motorcycle.h"
 #include "Car.h"
+#include "Truck.h"
 #include "NrObs.h"
 #include "WriteObs.h"
+#include "Observer.h"
 
 #include <vector>
 #include <memory>
+#include <fstream>
+
 
 using std::vector;
 using std::unique_ptr;
@@ -17,6 +21,7 @@ class Garage
     public:
 
         explicit Garage(vector<unique_ptr<Vehicle>>);
+        Garage();
         virtual ~Garage();
         void addVehicle(unique_ptr<Vehicle>);
         bool removeVehicle(size_t i);
@@ -24,9 +29,11 @@ class Garage
         bool returnVehicle(int i);
         bool writeObjects(std::string);
         bool readObjects(std::string);
+        void viewVehicles();
+        size_t baseSize();
     protected:
     private:
-        vector<Observer> observerCollection;
+        vector<unique_ptr<Observer>> observerCollection;
         vector<unique_ptr<Vehicle>> vehicleBase;
 
 

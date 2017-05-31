@@ -12,12 +12,15 @@ lib_SOURCES = \
 	Car.h \
 	Garage.cpp \
 	Garage.h \
-	Observer.cpp \
 	Observer.h \
 	NrObs.cpp \
-	NrObs \
+	NrObs.h \
 	WriteObs.cpp \
-	WriteObs.h
+	WriteObs.h \
+	interface.h \
+	interface.cpp \
+	Truck.h \
+	Truck.cpp 
 
 lib_OBJECTS=$(lib_SOURCES:.cpp=.o)
 
@@ -46,7 +49,7 @@ tests: $(tests_EXECUTABLE)
 	./$(tests_EXECUTABLE)
 
 calc: $(lib_OBJECTS) $(app_OBJECTS)
-	$(CXX) -o $@ $(app_OBJECTS) $(lib_OBJECTS) $(LINKFLAGS)
+	$(CXX) -o $@ main.cpp $(app_OBJECTS) $(lib_OBJECTS) --std=c++11
 
 .PHONY: clean tests
 

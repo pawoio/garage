@@ -22,7 +22,7 @@ void Vehicle::setAvailable(bool avl)
     else (available=true? false:true);
 }
 
-void Vehicle::setEnginePower(double ep)
+void Vehicle::setEnginePower(size_t ep)
 {
     if(ep>=0)
         enginePower=ep;

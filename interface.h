@@ -1,26 +1,36 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
-#include "interface.h"
+#include "Garage.h"
 
 class Interface
 {
     public:
-        Interface(Garage);
+        Interface(Garage& garage_):garagePtr(garage_) {};
         virtual ~Interface();
         void start();
 
     protected:
     private:
-    Garage* garagePtr;
-    void construct();
+    Garage& garagePtr;
+
+    void createMotor();
+    void createCar();
+    void createTruck();
+
+    void viewGarage();
+    std::string getString ();
+    size_t getDigit(size_t maxi);
+    char getOneChar();
+    //void construct();
     void addVehicle();
     bool removeVehicle();
     bool lendVehicle();
     bool returnVehicle();
     bool writeObjects();
     bool readObjects();
-    char menu();
+    char mainMenu();
+    char vehicleMenu();
 
 };
 

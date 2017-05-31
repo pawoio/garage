@@ -1,16 +1,18 @@
-#ifndef OBSERVER_H
-#define OBSERVER_H
 
-#include "Garage.h"
+
+#pragma once
+#include <memory>
+#include "vehicle.h"
+
+using std::unique_ptr;
 
 class Observer
 {
     public:
-        Observer();
-        bool virtual notify(unique_ptr<Vehicle> vhl)=0;
-        virtual ~Observer();
+        Observer(){};
+        virtual bool notify(unique_ptr<Vehicle> vhl){};
+        virtual ~Observer(){};
     protected:
     private:
 };
 
-#endif // OBSERVER_H

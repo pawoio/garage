@@ -138,7 +138,7 @@ char Interface::mainMenu()
             if(ch==EOF)
                 ch='q';
             return ch;
-        }
+        }return ch;
 
     }
 }
@@ -227,7 +227,7 @@ bool Interface::removeVehicle()
     std::cout<<"\nChoose vechicle to remove <write numer>:"<<std::endl;
     size_t n;
     n=getDigit(garagePtr.baseSize());
-    return garagePtr.removeVehicle(n);
+    return garagePtr.removeVehicle(n-1);
 }
 bool Interface::lendVehicle()
 {
@@ -240,11 +240,12 @@ bool Interface::lendVehicle()
     std::cout<<"Choose vechicle to  lend <write numer>: "<<std::endl;
     size_t n;
     n=getDigit(garagePtr.baseSize());
-    if(!garagePtr.lendVehicle(n))
+    if(!garagePtr.lendVehicle(n-1))
         {
-            std::cout<<"You cannot lend this vehicle";
+            std::cout<<"You cannot lend this vehicle"<<std::endl;
             return false;
-        }
+        }else
+
     return true;
 }
 
@@ -260,7 +261,7 @@ bool Interface::returnVehicle()
     std::cout<<"Choose vechicle to  return <write numer>: "<<std::endl;
     size_t n;
     n=getDigit(garagePtr.baseSize());
-    if(!garagePtr.returnVehicle(n))
+    if(!garagePtr.returnVehicle(n-1))
         {
             std::cout<<"You cannot return this vehicle"<<std::endl;
             return false;

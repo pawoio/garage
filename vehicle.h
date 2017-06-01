@@ -22,7 +22,7 @@ class Vehicle
         size_t getEnginePower(){return enginePower;};
         bool isAvailable(){return available;};
         virtual char vehicleType(){return 'v';};
-        virtual  size_t viewAdditionalInfo(){};
+        virtual  size_t viewAdditionalInfo(){return 0;};
 
 
     private:

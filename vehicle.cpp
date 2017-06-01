@@ -19,7 +19,10 @@ void Vehicle::setAvailable(bool avl)
 {
     if(available==avl)
     return;
-    else (available=true? false:true);
+    else if(available==true)
+        available=false;
+    else
+        available=true;
 }
 
 void Vehicle::setEnginePower(size_t ep)

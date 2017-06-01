@@ -37,9 +37,11 @@ bool Garage::removeVehicle(size_t i)
 
 bool Garage::lendVehicle(int i)
 {
-    if(vehicleBase.begin()[i]->isAvailable()==true)
+    for(size_t n=0;n<observerCollection.size();n++)
+        observerCollection[n]->notify(vehicleBase[i]);
+    if(vehicleBase[i]->isAvailable()==true)
     {
-        vehicleBase.begin()[i]->setAvailable(false);
+        vehicleBase[i]->setAvailable(false);
         return true;
     }else
         return false;
@@ -48,10 +50,11 @@ bool Garage::lendVehicle(int i)
 
 bool Garage::returnVehicle(int i)
 {
-
-    if(vehicleBase.begin()[i]->isAvailable()==false)
+    for(size_t n=0;n<observerCollection.size();n++)
+        observerCollection[n]->notify(vehicleBase[i]);
+    if(vehicleBase[i]->isAvailable()==false)
         {
-            vehicleBase.begin()[i]->setAvailable(true);
+            vehicleBase[i]->setAvailable(true);
             return true;
         }else
             return false;
@@ -119,6 +122,12 @@ bool Garage::readObjects(std::string fileName)
         fin.read(reinterpret_cast<char*>(&engine), sizeof(size_t));
         size_t addInf;
         fin.read(reinterpret_cast<char*>(&addInf), sizeof(size_t));
+        for(size_t i=0;i<baseSize();i++)//////////////////////////////
+        {
+            if(vehicleBase[i]->getLicenseNr()==str)
+                continue;
+        }
+
         if(q=='c')
             addVehicle(unique_ptr<Vehicle> (new Car(str,prodYear,engine,addInf)));
         else if(q=='m')

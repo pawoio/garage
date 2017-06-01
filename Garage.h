@@ -35,6 +35,7 @@ class Garage
     private:
         vector<unique_ptr<Observer>> observerCollection;
         vector<unique_ptr<Vehicle>> vehicleBase;
+        bool ifRepeat(std::string str);
 
 
 

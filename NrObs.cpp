@@ -14,7 +14,7 @@ bool NrObs::notify(unique_ptr<Vehicle> vhl)
 {
     if(vhl->isAvailable())
     {
-        if(lentNr<100);
+        if(lentNr<100)
         {
             lentNr++;
             return true;

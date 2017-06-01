@@ -1,26 +1,16 @@
-
-
-CPPFLAGS = --std=c++11 -Wall  -DBOOST_TEST_DYN_LINK
+# -Wall == all warnings enabled
+# -Werror == treat warnings as ERRORS!
+CPPFLAGS = --std=c++11 -Wall -DBOOST_TEST_DYN_LINK
 LINKFLAGS = --std=c++11 -lboost_unit_test_framework
 
 lib_SOURCES = \
-	vehicle.cpp \
-	vehicle.h \
-	motorcycle.cpp \
-	motorcycle.h \
-	Car.cpp \
-	Car.h \
 	Garage.cpp \
-	Garage.h \
-	Observer.h \
-	NrObs.cpp \
-	NrObs.h \
-	WriteObs.cpp \
-	WriteObs.h \
-	interface.h \
 	interface.cpp \
-	Truck.h \
-	Truck.cpp 
+	motorcycle.cpp \
+	NrObs.cpp \
+	Truck.cpp \
+	vehicle.cpp \
+	WriteObs.cpp
 
 lib_OBJECTS=$(lib_SOURCES:.cpp=.o)
 
@@ -37,7 +27,7 @@ app_OBJECTS=$(app_SOURCES:.cpp=.o)
 
 tests_EXECUTABLE = tests_bin
 
-all: calc tests
+all: rect tests
 
 %.o : %.c
 	$(CXX) -c $(CPPFLAGS) $< -o $@
@@ -48,12 +38,12 @@ $(tests_EXECUTABLE): $(tests_OBJECTS) $(lib_OBJECTS)
 tests: $(tests_EXECUTABLE)
 	./$(tests_EXECUTABLE)
 
-calc: $(lib_OBJECTS) $(app_OBJECTS)
-	$(CXX) -o $@ main.cpp $(app_OBJECTS) $(lib_OBJECTS) --std=c++11
+rect: $(lib_OBJECTS) $(app_OBJECTS)
+	$(CXX) -o $@ $(app_OBJECTS) $(lib_OBJECTS) $(LINKFLAGS)
 
 .PHONY: clean tests
 
 clean:
 	- rm *.o
 	- rm tests_bin
-
+- rm rect

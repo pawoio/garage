@@ -8,7 +8,7 @@ class WriteObs: public Observer
 {
     public:
         WriteObs();
-        bool virtual notify(std::unique_ptr<Vehicle> vhl);
+        bool virtual notify(Vehicle*& vhl );
         virtual ~WriteObs();
     protected:
     private:

@@ -3,10 +3,7 @@
 Garage::Garage(vector<unique_ptr<Vehicle>>  vhlBase)
 {
     vehicleBase=std::move(vhlBase);
-    WriteObs writeObs;
-    NrObs nrObs;
-    observerCollection.push_back(unique_ptr<Observer> (new WriteObs));
-    observerCollection.push_back(unique_ptr<Observer> (new NrObs));
+
 }
 Garage::Garage()
 {
@@ -19,7 +16,10 @@ Garage::~Garage()
 {
     //dtor
 }
-
+void Garage::addObs(unique_ptr<Observer> obs)
+{
+    observerCollection.push_back(move(obs));
+}
 void Garage::addVehicle(unique_ptr<Vehicle> vhl)
 {
     vehicleBase.push_back(move(vhl));
@@ -52,7 +52,8 @@ bool Garage::returnVehicle(int i)
 
     if(vehicleBase[i]->isAvailable()==false)
         {
-            vehicleBase[i]->setAvailable(true);
+
+
             return true;
         }else
             return false;

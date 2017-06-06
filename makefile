@@ -15,8 +15,8 @@ lib_SOURCES = \
 lib_OBJECTS=$(lib_SOURCES:.cpp=.o)
 
 tests_SOURCES = \
-	vehicleTests.cpp 
-	
+	vehicleTests.cpp \
+	CarTruckMotoTests.cpp
 
 tests_OBJECTS=$(tests_SOURCES:.cpp=.o)
 
@@ -46,4 +46,4 @@ rect: $(lib_OBJECTS) $(app_OBJECTS)
 clean:
 	- rm *.o
 	- rm tests_bin
-- rm rect
+	- rm rect

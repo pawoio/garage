@@ -31,11 +31,13 @@ class Garage
         bool readObjects(std::string);
         void viewVehicles();
         size_t baseSize();
+        void addObs(unique_ptr<Observer> );
     protected:
     private:
         vector<unique_ptr<Observer>> observerCollection;
         vector<unique_ptr<Vehicle>> vehicleBase;
         bool ifRepeat(std::string str);
+
 
 
 

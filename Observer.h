@@ -10,7 +10,7 @@ class Observer
 {
     public:
         Observer(){};
-        virtual bool notify(unique_ptr<Vehicle> vhl){return true;};
+        virtual bool notify(Vehicle*& vhl){return true;};
         virtual ~Observer(){};
     protected:
     private:

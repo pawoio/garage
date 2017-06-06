@@ -12,7 +12,7 @@ WriteObs::~WriteObs()
     //dtor
 }
 
-bool WriteObs::notify(unique_ptr<Vehicle> vhl)
+bool WriteObs::notify(Vehicle*& vhl)
 {
     std::ofstream fout("lendHistory.txt", std::ios_base::out|std::ios_base::app);
     struct tm * ptr;

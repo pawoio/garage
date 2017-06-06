@@ -10,7 +10,7 @@ NrObs::~NrObs()
     //dtor
 }
 
-bool NrObs::notify(unique_ptr<Vehicle> vhl)
+bool NrObs::notify(Vehicle*&  vhl)
 {
     if(vhl->isAvailable())
     {

@@ -25,17 +25,17 @@ class Garage
         virtual ~Garage();
         void addVehicle(unique_ptr<Vehicle>);
         bool removeVehicle(size_t i);
-        bool lendVehicle(int i);
-        bool returnVehicle(int i);
+        bool lendVehicle(size_t i);
+        bool returnVehicle(size_t i);
         bool writeObjects(std::string);
         bool readObjects(std::string);
-        void viewVehicles();
         size_t baseSize();
+        void viewVehicles();
+        bool ifRepeat(std::string str);
     protected:
     private:
         vector<unique_ptr<Observer>> observerCollection;
         vector<unique_ptr<Vehicle>> vehicleBase;
-        bool ifRepeat(std::string str);
 
 
 

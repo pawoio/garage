@@ -12,17 +12,18 @@ WriteObs::~WriteObs()
     //dtor
 }
 
-bool WriteObs::notify(unique_ptr<Vehicle> vhl)
+bool WriteObs::notify(Vehicle& vhl)
 {
     std::ofstream fout("lendHistory.txt", std::ios_base::out|std::ios_base::app);
-    struct tm * ptr;
+    time_t theTime = time(NULL);
+    struct tm * ptr=localtime(&theTime);
     if(!fout)
         return false;
-    if(vhl->isAvailable())
+    if(vhl.isAvailable())
     {
-        fout<< asctime( ptr )<<"Vehicle"<<vhl->getLicenseNr()<<"return/n";
+        fout<< asctime( ptr )<<"Vehicle "<<vhl.getLicenseNr()<<" return\n";
     }else
-        fout<< asctime( ptr )<<"Vehicle"<<vhl->getLicenseNr()<<"lend/n";
+        fout<< asctime( ptr )<<"Vehicle "<<vhl.getLicenseNr()<<" lend\n";
    fout.close();
    if(!fout)
         return false;

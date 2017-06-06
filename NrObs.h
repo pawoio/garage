@@ -9,12 +9,12 @@ class NrObs : public Observer
 {
     public:
         NrObs();
-        bool  notify(unique_ptr<Vehicle> vhl);
+        virtual bool  notify(Vehicle& vhl);
         virtual ~NrObs();
     protected:
     private:
     size_t lentNr;
-    enum{N=100};
+    enum{maxLent=2};
 
 };
 

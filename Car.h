@@ -11,7 +11,7 @@ class Car : public Vehicle
         virtual ~Car(){};
         size_t getDoorNr(){return doorNr;};
         virtual char vehicleType(){return 'c';};
-        virtual size_t viewAdditionalInfo();
+        virtual size_t viewAdditionalInfo(){return getDoorNr();};
 
         //void setDoorNr();
     protected:

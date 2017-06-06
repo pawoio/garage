@@ -30,16 +30,60 @@ bool Garage::removeVehicle(size_t i)
 
     if(vehicleBase.size()<i)
         return false;
-    else vehicleBase.erase(vehicleBase.begin()+i);
+    else
+        vehicleBase.erase(vehicleBase.begin()+i);
         return true;
 
 }
 
-bool Garage::lendVehicle(int i)
+void Garage::viewVehicles()
+{
+    for(size_t i=0;i<baseSize();i++)
+    {
+        std::cout<<i+1<<"# \n "<<"\t license number: "<<vehicleBase.begin()[i]->getLicenseNr()<<"\n\t production year: "
+                <<vehicleBase.begin()[i]->getProductionYear()<<"\n\t enigine power: "<< vehicleBase.begin()[i]->getEnginePower();
+        if(vehicleBase.begin()[i]->vehicleType()=='c')
+        {
+            std::cout<<"\n\t door number: "<< vehicleBase.begin()[i]->viewAdditionalInfo()<<std::endl;
+        }else if(vehicleBase.begin()[i]->vehicleType()=='t')
+        {
+            std::cout<<"\n\t wheel number: "<< vehicleBase.begin()[i]->viewAdditionalInfo()<<std::endl;
+        }
+        if(vehicleBase.begin()[i]->isAvailable())
+            std::cout<<"\n\t Available\n";
+        else
+            std::cout<<"\n\t Not available\n";
+
+    }
+}
+
+bool Garage::returnVehicle(size_t i)
+{
+
+    if(vehicleBase[i]->isAvailable()==false)
+        {
+            for(size_t n=0;n<observerCollection.size();n++)
+            {
+                Vehicle& vhl=(*vehicleBase[i]);
+                observerCollection[n]->notify(vhl);
+            }
+            vehicleBase[i]->setAvailable(true);
+            return true;
+        }else
+            return false;
+}
+
+bool Garage::lendVehicle(size_t i)
 {
 
     if(vehicleBase[i]->isAvailable()==true)
     {
+        for(size_t n=0;n<observerCollection.size();n++)
+            {
+                Vehicle& vhl=(*vehicleBase[i]);
+               if(!observerCollection[n]->notify(vhl))
+                    return false;
+            }
         vehicleBase[i]->setAvailable(false);
         return true;
     }else
@@ -47,16 +91,6 @@ bool Garage::lendVehicle(int i)
 
 }
 
-bool Garage::returnVehicle(int i)
-{
-
-    if(vehicleBase[i]->isAvailable()==false)
-        {
-            vehicleBase[i]->setAvailable(true);
-            return true;
-        }else
-            return false;
-}
 
 bool Garage::writeObjects(std::string filename)
 {
@@ -85,26 +119,7 @@ size_t Garage::baseSize()
     return vehicleBase.size();
 }
 
-void Garage::viewVehicles()
-{
-    for(size_t i=0;i<baseSize();i++)
-    {
-        std::cout<<i+1<<"# \n "<<"\t license number: "<<vehicleBase.begin()[i]->getLicenseNr()<<"\n\t production year: "
-                <<vehicleBase.begin()[i]->getProductionYear()<<"\n\t enigine power: "<< vehicleBase.begin()[i]->getEnginePower();
-        if(vehicleBase.begin()[i]->vehicleType()=='c')
-        {
-            std::cout<<"\n\t door number: "<< vehicleBase.begin()[i]->viewAdditionalInfo()<<std::endl;
-        }else if(vehicleBase.begin()[i]->vehicleType()=='t')
-        {
-            std::cout<<"\n\t wheel number: "<< vehicleBase.begin()[i]->viewAdditionalInfo()<<std::endl;
-        }
-        if(vehicleBase.begin()[i]->isAvailable())
-            std::cout<<"\n\t Available\n";
-        else
-            std::cout<<"\n\t Not available\n";
 
-    }
-}
 
 bool Garage::ifRepeat(std::string str)
 {

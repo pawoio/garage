@@ -90,7 +90,7 @@ void Interface::start()
 {
 
     char ch;
-    while((ch=mainMenu())!='q')
+    while((ch=firstMenu())!='q')
     {
 
         switch(ch)
@@ -99,7 +99,7 @@ void Interface::start()
             break;
             case 'b': Interface::removeVehicle();
             break;
-            case 'c': Interface::lendVehicle();
+            case 'c': Interface::borrowVehicle();
             break;
             case 'd': Interface::returnVehicle();
             break;
@@ -115,19 +115,20 @@ void Interface::start()
 
 }
 
-char Interface::mainMenu()
+char Interface::firstMenu()
 {
     std::cin.clear();
 
     char ch;
     std::cout<<"Choose what to do:\n"
              <<"a.Add vehicle          b.Delete vehicle\n"
-             <<"c.Borrow vehicle       d.Return vehicle\n"
+             <<"c.Lend vehicle       d.Return vehicle\n"
              <<"e.Write down vehicles  f.Read vehicles from file\n"
              <<"q.Quit\n";
 
-    while(ch=getOneChar())
+    while(true)
     {
+        ch=getOneChar();
         if(ch!='a'&&ch!='b'&&ch!='c'&&ch!='d'&&ch!='e'&&ch!='f'&&ch!='q')
         {
             std::cout<<"Put a,b,c,d,e,f or q\n";
@@ -145,8 +146,8 @@ char Interface::mainMenu()
 void Interface::addVehicle()
 {
     char ch;
-    while((ch=vehicleMenu()))
-
+    while(true)
+        ch=vehicleMenu();
         switch(ch)
         {
             case 'a': Interface::createMotor();
@@ -163,8 +164,9 @@ char Interface::vehicleMenu()
     std::cout<<"Choose vehicle type:\n"
                  <<"a.Motorcycle      b.Car\n"
                  <<"c.Truck"<<std::endl;
-        while(char ch=Interface::getOneChar())
+        while(true)
         {
+            char ch=Interface::getOneChar();
             if(ch!='a'&&ch!='b'&&ch!='c')
             {
                 std::cout<<"Put a,b or c\n";
@@ -179,7 +181,14 @@ char Interface::vehicleMenu()
 void Interface::createMotor()
 {
     std::cout<<"Write motor license number: \n";
-    std::string licenseNr=getString();
+    std::string licenseNr;
+    while(true)
+    {
+        licenseNr=getString();
+        if(!garagePtr.ifRepeat(licenseNr))
+            break;
+        std::cout<<"You have vehicle with the same license number. Write sth else\n";
+    }
     std::cout<<"Write year of production: \n";
     size_t year = aTime->tm_year + 1900;
     size_t productionYear=getDigit(year);
@@ -192,7 +201,14 @@ void Interface::createMotor()
 void Interface::createCar()
 {
     std::cout<<"Write Car license number: \n";
-    std::string licenseNr=getString();
+    std::string licenseNr;
+    while(true)
+    {
+        licenseNr=getString();
+        if(!garagePtr.ifRepeat(licenseNr))
+            break;
+        std::cout<<"You have vehicle with the same license number. Write sth else\n";
+    }
     std::cout<<"Write year of production: \n";
     size_t year = aTime->tm_year + 1900;
     size_t productionYear=getDigit(year);
@@ -205,7 +221,14 @@ void Interface::createCar()
 void Interface::createTruck()
 {
     std::cout<<"Write truck license number: \n";
-    std::string licenseNr=getString();
+    std::string licenseNr;
+    while(true)
+    {
+        licenseNr=getString();
+        if(!garagePtr.ifRepeat(licenseNr))
+            break;
+        std::cout<<"You have vehicle with the same license number. Write sth else\n";
+    }
     std::cout<<"Write year of production: \n";
     size_t year = aTime->tm_year + 1900;
     size_t productionYear=getDigit(year);
@@ -215,6 +238,7 @@ void Interface::createTruck()
     size_t wheelNr_=getDigit(100);
     garagePtr.addVehicle(unique_ptr<Vehicle> (new Truck(licenseNr,productionYear,enginePower,wheelNr_)));
 }
+
 
 bool Interface::removeVehicle()
 {
@@ -229,7 +253,7 @@ bool Interface::removeVehicle()
     n=getDigit(garagePtr.baseSize());
     return garagePtr.removeVehicle(n-1);
 }
-bool Interface::lendVehicle()
+bool Interface::borrowVehicle()
 {
     if(garagePtr.baseSize()==0)
     {

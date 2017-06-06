@@ -18,18 +18,17 @@ class Interface
     void createCar();
     void createTruck();
 
-    void viewGarage();
     std::string getString ();
     size_t getDigit(size_t maxi);
     char getOneChar();
     //void construct();
     void addVehicle();
     bool removeVehicle();
-    bool lendVehicle();
+    bool borrowVehicle();
     bool returnVehicle();
     bool writeObjects();
     bool readObjects();
-    char mainMenu();
+    char firstMenu();
     char vehicleMenu();
 
 };

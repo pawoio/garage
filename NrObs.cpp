@@ -1,8 +1,10 @@
 #include "NrObs.h"
 
+
+
 NrObs::NrObs()
 {
-    //ctor
+    lentNr=0;
 }
 
 NrObs::~NrObs()
@@ -10,18 +12,22 @@ NrObs::~NrObs()
     //dtor
 }
 
-bool NrObs::notify(unique_ptr<Vehicle> vhl)
+bool NrObs::notify(Vehicle& vhl)
 {
-    if(vhl->isAvailable())
+    if(vhl.isAvailable())
     {
-        if(lentNr<100)
+        if(lentNr<=maxLent)
         {
             lentNr++;
             return true;
         }else
-
         return false;
+
     }
     else
+    {
+        --lentNr;
         return true;
+    }
+
 }

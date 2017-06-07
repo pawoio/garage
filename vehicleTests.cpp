@@ -31,6 +31,6 @@ BOOST_AUTO_TEST_CASE(created_vehicle_is_available)
 {
    Vehicle vl=Vehicle("ABC1234",5,7);
 
-    BOOST_CHECK_EQUAL(vl.ifAvailable(),1);
+    BOOST_CHECK_EQUAL(vl.isAvailable(),1);
 }
 

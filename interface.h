@@ -21,6 +21,7 @@ class Interface
     std::string getString ();
     size_t getDigit(size_t maxi);
     char getOneChar();
+    void cleanBufor();
     //void construct();
     void addVehicle();
     bool removeVehicle();

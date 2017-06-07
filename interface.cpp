@@ -15,32 +15,36 @@ Interface::~Interface()
 {
     //dtor
 }
-
+void Interface::cleanBufor()
+{
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
 char Interface::getOneChar()
 {
-
 
     std::string input;
     while(true)
     {
         std::cout<<"Insert one letter:\n";
         std::cin>>input;
+
         if (std::cin.fail())
         {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout<<"gówno";
+            cleanBufor();
             continue;
         }
         if (input.length() != 1)
         {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout<<"kupa";
+            cleanBufor();
             continue;
         }
+
         break;
     }
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    cleanBufor();
     return input[0];
 
 }
@@ -53,18 +57,15 @@ size_t Interface::getDigit(size_t maxi)
         std::cin>>i;
         if(std::cin.fail())
         {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cleanBufor();
             std::cout<<"Write number \n";
         }else if(i>maxi)
             {
                 std::cout<<"Write number less then "<<maxi<<std::endl;
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+               cleanBufor();
                 continue;
             }else
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cleanBufor();
             return i;
 
     }
@@ -76,11 +77,9 @@ std::string Interface::getString()
     std::string s;
     while(!(std::cin>>s))
     {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        cleanBufor();
     }
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    cleanBufor();
     return s;
 }
 
@@ -122,13 +121,12 @@ char Interface::firstMenu()
     char ch;
     std::cout<<"Choose what to do:\n"
              <<"a.Add vehicle          b.Delete vehicle\n"
-             <<"c.Lend vehicle       d.Return vehicle\n"
+             <<"c.Borrow vehicle       d.Return vehicle\n"
              <<"e.Write down vehicles  f.Read vehicles from file\n"
              <<"q.Quit\n";
 
-    while(true)
+    while(ch=getOneChar())
     {
-        ch=getOneChar();
         if(ch!='a'&&ch!='b'&&ch!='c'&&ch!='d'&&ch!='e'&&ch!='f'&&ch!='q')
         {
             std::cout<<"Put a,b,c,d,e,f or q\n";
@@ -143,11 +141,12 @@ char Interface::firstMenu()
 
     }
 }
+
 void Interface::addVehicle()
 {
     char ch;
     while(true)
-        ch=vehicleMenu();
+        ch=getOneChar();
         switch(ch)
         {
             case 'a': Interface::createMotor();

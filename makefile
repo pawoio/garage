@@ -16,7 +16,8 @@ lib_SOURCES = \
 lib_OBJECTS=$(lib_SOURCES:.cpp=.o)
 
 tests_SOURCES = \
-	vehicleTests.cpp
+	vehicleTests.cpp \
+	CarTruckMotorTests.cpp
 
 tests_OBJECTS=$(tests_SOURCES:.cpp=.o)
 

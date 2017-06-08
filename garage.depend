@@ -107,20 +107,20 @@
 1496223364 source:/home/ja/Dokumenty/garage/garage/Truck.cpp
 	"Truck.h"
 
-1496313706 source:/home/mion/s/166/pmlyniec/Desktop/garage/Car.cpp
+1496917005 source:/home/mion/s/166/pmlyniec/Desktop/garage/Car.cpp
 	"Car.h"
 
-1496313706 /home/mion/s/166/pmlyniec/Desktop/garage/Car.h
+1496917005 /home/mion/s/166/pmlyniec/Desktop/garage/Car.h
 	"vehicle.h"
 
-1496313706 /home/mion/s/166/pmlyniec/Desktop/garage/vehicle.h
+1496917005 /home/mion/s/166/pmlyniec/Desktop/garage/vehicle.h
 	<string>
 	<iostream>
 
-1496316172 source:/home/mion/s/166/pmlyniec/Desktop/garage/Garage.cpp
+1496919593 source:/home/mion/s/166/pmlyniec/Desktop/garage/Garage.cpp
 	"Garage.h"
 
-1496315693 /home/mion/s/166/pmlyniec/Desktop/garage/Garage.h
+1496918521 /home/mion/s/166/pmlyniec/Desktop/garage/Garage.h
 	"vehicle.h"
 	"motorcycle.h"
 	"Car.h"
@@ -138,31 +138,31 @@
 1496313706 /home/mion/s/166/pmlyniec/Desktop/garage/Truck.h
 	"vehicle.h"
 
-1496316249 /home/mion/s/166/pmlyniec/Desktop/garage/NrObs.h
+1496917005 /home/mion/s/166/pmlyniec/Desktop/garage/NrObs.h
 	"Observer.h"
 	<stddef.h>
 
-1496316249 /home/mion/s/166/pmlyniec/Desktop/garage/Observer.h
+1496917005 /home/mion/s/166/pmlyniec/Desktop/garage/Observer.h
 	<memory>
 	"vehicle.h"
 
-1496316256 /home/mion/s/166/pmlyniec/Desktop/garage/WriteObs.h
+1496917005 /home/mion/s/166/pmlyniec/Desktop/garage/WriteObs.h
 	"Observer.h"
 	<memory>
 
-1496313706 source:/home/mion/s/166/pmlyniec/Desktop/garage/interface.cpp
+1496917354 source:/home/mion/s/166/pmlyniec/Desktop/garage/interface.cpp
 	"interface.h"
 	<string>
 	<limits>
 	<time.h>
 
-1496313706 /home/mion/s/166/pmlyniec/Desktop/garage/interface.h
+1496917005 /home/mion/s/166/pmlyniec/Desktop/garage/interface.h
 	"Garage.h"
 
 1496313706 source:/home/mion/s/166/pmlyniec/Desktop/garage/motorcycle.cpp
 	"motorcycle.h"
 
-1496316249 source:/home/mion/s/166/pmlyniec/Desktop/garage/NrObs.cpp
+1496917005 source:/home/mion/s/166/pmlyniec/Desktop/garage/NrObs.cpp
 	"NrObs.h"
 
 1496313706 source:/home/mion/s/166/pmlyniec/Desktop/garage/Truck.cpp
@@ -171,12 +171,12 @@
 1496313706 source:/home/mion/s/166/pmlyniec/Desktop/garage/vehicle.cpp
 	"vehicle.h"
 
-1496316273 source:/home/mion/s/166/pmlyniec/Desktop/garage/WriteObs.cpp
+1496917005 source:/home/mion/s/166/pmlyniec/Desktop/garage/WriteObs.cpp
 	"WriteObs.h"
 	<time.h>
 	<fstream>
 
-1496315947 source:/home/mion/s/166/pmlyniec/Desktop/garage/main.cpp
+1496917005 source:/home/mion/s/166/pmlyniec/Desktop/garage/main.cpp
 	<iostream>
 	"interface.h"
 

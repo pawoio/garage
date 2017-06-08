@@ -153,7 +153,7 @@ bool Garage::readObjects(std::string fileName)
             addVehicle(unique_ptr<Vehicle> (new Motorcycle(str,prodYear,engine)));
         else if(q=='t')
             addVehicle(unique_ptr<Vehicle> (new Truck(str,prodYear,engine,addInf)));
-        return true;
+
     }
     fin.close();
     return true;

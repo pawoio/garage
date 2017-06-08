@@ -109,6 +109,14 @@ void Interface::start()
             break;
             case 'f': Interface::readObjects();
             break;
+            case 'g':
+            {
+                if(garagePtr.baseSize()==0)
+                    std::cout<<"No vehicle in base\n";
+                else
+                    garagePtr.viewVehicles();
+            }
+            break;
             default : std::cout<<"Menu error\n";
         }
     }
@@ -126,14 +134,14 @@ char Interface::firstMenu()
              <<"a.Add vehicle          b.Delete vehicle\n"
              <<"c.Borrow vehicle       d.Return vehicle\n"
              <<"e.Write down vehicles  f.Read vehicles from file\n"
-             <<"q.Quit\n";
+             <<"g.View garage          q.Quit\n";
 
     while(ch=getOneChar())
     {
 
-        if(ch!='a'&&ch!='b'&&ch!='c'&&ch!='d'&&ch!='e'&&ch!='f'&&ch!='q')
+        if(ch!='a'&&ch!='b'&&ch!='c'&&ch!='d'&&ch!='e'&&ch!='f'&&ch!='g'&&ch!='q')
         {
-            std::cout<<"Put a,b,c,d,e,f or q\n";
+            std::cout<<"Put a,b,c,d,e,f,g or q\n";
 
                 continue;
         }else if(ch==EOF)

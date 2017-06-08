@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="NrObs.cpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Truck.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="87" topLine="5" />
+			<Cursor1 position="319" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="218" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="interface.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="807" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="422" topLine="3" />
 		</Cursor>
 	</File>
 	<File name="WriteObs.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -11,34 +21,9 @@
 			<Cursor1 position="247" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Truck.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Garage.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="807" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="413" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="motorcycle.cpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="173" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Car.cpp" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="18" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Observer.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="234" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Garage.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="807" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1933" topLine="65" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="323" topLine="0" />
+			<Cursor1 position="4157" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="NrObs.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -46,24 +31,34 @@
 			<Cursor1 position="236" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="WriteObs.cpp" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="468" topLine="2" />
+		</Cursor>
+	</File>
+	<File name="motorcycle.cpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="159" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="Truck.cpp" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="120" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="interface.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="807" zoom_1="0" zoom_2="0">
+	<File name="Observer.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="422" topLine="0" />
+			<Cursor1 position="234" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="vehicle.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="NrObs.cpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="418" topLine="6" />
+			<Cursor1 position="87" topLine="2" />
 		</Cursor>
 	</File>
-	<File name="Garage.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="motorcycle.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="785" topLine="12" />
+			<Cursor1 position="371" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Car.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -71,24 +66,29 @@
 			<Cursor1 position="51" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="WriteObs.cpp" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Garage.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="468" topLine="5" />
+			<Cursor1 position="758" topLine="16" />
 		</Cursor>
 	</File>
-	<File name="motorcycle.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Car.cpp" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="275" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="vehicle.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="981" topLine="0" />
+			<Cursor1 position="18" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="interface.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6159" topLine="246" />
+			<Cursor1 position="2928" topLine="306" />
+		</Cursor>
+	</File>
+	<File name="vehicle.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="332" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="vehicle.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="952" topLine="4" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

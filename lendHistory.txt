@@ -4,3 +4,17 @@ Thu Jun  8 11:15:11 2017
 Vehicle a lent
 Thu Jun  8 11:15:35 2017
 Vehicle a returned
+Thu Jun  8 12:18:10 2017
+Vehicle ae lent
+Thu Jun  8 12:30:10 2017
+Vehicle 3wg3 lent
+Thu Jun  8 12:30:19 2017
+Vehicle dsa lent
+Thu Jun  8 12:30:55 2017
+Vehicle 21 lent
+Thu Jun  8 12:31:25 2017
+Vehicle 21 returned
+Thu Jun  8 12:31:30 2017
+Vehicle 1 lent
+Thu Jun  8 13:10:55 2017
+Vehicle 11 lent

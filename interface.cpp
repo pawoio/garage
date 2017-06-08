@@ -20,10 +20,12 @@ void Interface::cleanBufor()
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
+
 char Interface::getOneChar()
 {
 
     std::string input;
+
     while(true)
     {
         std::cout<<"Insert one letter:\n";
@@ -31,20 +33,20 @@ char Interface::getOneChar()
 
         if (std::cin.fail())
         {
-            std::cout<<"gówno";
+
             cleanBufor();
             continue;
         }
         if (input.length() != 1)
         {
-            std::cout<<"kupa";
+
             cleanBufor();
             continue;
         }
-
+       cleanBufor();
         break;
+
     }
-    cleanBufor();
     return input[0];
 
 }
@@ -59,9 +61,10 @@ size_t Interface::getDigit(size_t maxi)
         {
             cleanBufor();
             std::cout<<"Write number \n";
-        }else if(i>maxi)
+            continue;
+        }else if(i>maxi||i<=0)
             {
-                std::cout<<"Write number less then "<<maxi<<std::endl;
+                std::cout<<"Write positive number and less or even then "<<maxi<<std::endl;
                cleanBufor();
                 continue;
             }else
@@ -127,14 +130,15 @@ char Interface::firstMenu()
 
     while(ch=getOneChar())
     {
+
         if(ch!='a'&&ch!='b'&&ch!='c'&&ch!='d'&&ch!='e'&&ch!='f'&&ch!='q')
         {
             std::cout<<"Put a,b,c,d,e,f or q\n";
 
                 continue;
-        }else
+        }else if(ch==EOF)
         {
-            if(ch==EOF)
+
                 ch='q';
             return ch;
         }return ch;
@@ -145,8 +149,8 @@ char Interface::firstMenu()
 void Interface::addVehicle()
 {
     char ch;
-    while(true)
-        ch=getOneChar();
+    while(ch=vehicleMenu())
+
         switch(ch)
         {
             case 'a': Interface::createMotor();
@@ -165,7 +169,7 @@ char Interface::vehicleMenu()
                  <<"c.Truck"<<std::endl;
         while(true)
         {
-            char ch=Interface::getOneChar();
+            char ch=getOneChar();
             if(ch!='a'&&ch!='b'&&ch!='c')
             {
                 std::cout<<"Put a,b or c\n";

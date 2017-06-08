@@ -34,3 +34,4 @@ BOOST_AUTO_TEST_CASE(created_vehicle_is_available)
     BOOST_CHECK_EQUAL(vl.isAvailable(),1);
 }
 
+

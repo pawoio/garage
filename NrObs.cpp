@@ -13,6 +13,7 @@ NrObs::~NrObs()
 }
 
 bool NrObs::notify(Vehicle& vhl)
+
 {
     if(vhl.isAvailable())
     {

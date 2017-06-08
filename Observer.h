@@ -11,6 +11,7 @@ class Observer
     public:
         Observer(){};
         virtual bool notify(Vehicle& vhl){return true;};
+
         virtual ~Observer(){};
     protected:
     private:

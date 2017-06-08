@@ -12,7 +12,9 @@ WriteObs::~WriteObs()
     //dtor
 }
 
+
 bool WriteObs::notify(Vehicle& vhl)
+
 {
     std::ofstream fout("lendHistory.txt", std::ios_base::out|std::ios_base::app);
     time_t theTime = time(NULL);
@@ -21,9 +23,9 @@ bool WriteObs::notify(Vehicle& vhl)
         return false;
     if(vhl.isAvailable())
     {
-        fout<< asctime( ptr )<<"Vehicle "<<vhl.getLicenseNr()<<" return\n";
+        fout<< asctime( ptr )<<"Vehicle "<<vhl.getLicenseNr()<<" lent\n";
     }else
-        fout<< asctime( ptr )<<"Vehicle "<<vhl.getLicenseNr()<<" lend\n";
+        fout<< asctime( ptr )<<"Vehicle "<<vhl.getLicenseNr()<<" returned\n";
    fout.close();
    if(!fout)
         return false;
